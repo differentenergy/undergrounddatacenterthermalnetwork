@@ -1,35 +1,5 @@
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BroadCore 热力基础设施 | Thermal Infrastructure</title>
-    <meta name="description" content="地下热力高速公路连接数据中心与住宅 | Underground thermal superhighway connecting data centers to homes">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <style>
-        @keyframes flow { 0% { transform: translateX(0); } 100% { transform: translateX(100%); } }
-        .flow-line { animation: flow 10s linear infinite; }
-        * { scroll-behavior: smooth; }
-    </style>
-</head>
-<body class="bg-slate-950">
-    <div id="root"></div>
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script type="text/babel">
-        const { useState, useEffect, useRef } = React;
-        
-        // Icon components using Lucide
-        const Globe = (props) => <i data-lucide="globe" {...props}></i>;
-        const Waves = (props) => <i data-lucide="waves" {...props}></i>;
-        const ArrowRight = (props) => <i data-lucide="arrow-right" {...props}></i>;
-        const Thermometer = (props) => <i data-lucide="thermometer" {...props}></i>;
-        const CheckCircle = (props) => <i data-lucide="check-circle" {...props}></i>;
-        const Zap = (props) => <i data-lucide="zap" {...props}></i>;
-        const TrendingDown = (props) => <i data-lucide="trending-down" {...props}></i>;
-        
+import React, { useState, useEffect, useRef } from 'react';
+import { Waves, Thermometer, Home, Server, Zap, TrendingDown, Globe, CheckCircle, ArrowRight } from 'lucide-react';
 
 // BroadCore Thermal Infrastructure
 // Underground thermal superhighway connecting data centers to homes
@@ -901,22 +871,4 @@ const BroadCoreThermal = () => {
   );
 };
 
-
-
-        // Initialize Lucide icons after render
-        function initIcons() {
-            if (window.lucide) {
-                window.lucide.createIcons();
-            }
-        }
-
-        // Render the app
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<BroadCoreThermal />);
-        
-        // Initialize icons on load and after any updates
-        setTimeout(initIcons, 100);
-        setInterval(initIcons, 1000);
-    </script>
-</body>
-</html>
+export default BroadCoreThermal;
